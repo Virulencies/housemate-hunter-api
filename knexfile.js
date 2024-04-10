@@ -9,10 +9,10 @@ module.exports = {
     client: 'pg',
     connection: 'postgres://localhost/roommates',
     migrations: {
-      directory: './db/migrations'
+      directory: '/db/migrations'
     },
     seeds: {
-      directory: './seeds'
+      directory: '/seeds'
     },
     useNullAsDefault: true
   },
@@ -20,10 +20,10 @@ module.exports = {
     client: 'postgresql',
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: './db/migrations'
+      directory: '/db/migrations'
     },
     seeds: {
-      directory: './seeds'
+      directory: '/seeds'
     },
     useNullAsDefault: true
   }
