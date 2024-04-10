@@ -18,7 +18,7 @@ module.exports = {
   },
   production: {
     client: 'postgresql',
-    connection: 'postgres://erinkelley:Swimming!317@localhost:5432/roommates',
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory: './db/migrations'
     },
