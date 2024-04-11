@@ -6,7 +6,7 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/roommates',
+    connection: process.env.DATABASE_URL ||'postgres://localhost/roommates',
     migrations: {
       directory: './db/migrations'
     },
@@ -17,7 +17,7 @@ module.exports = {
   },
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: 'postgres://yxnxvudzvblxzm:a7af70e1dbb73ecdc727006bbe3d99df7cab08af88a72e1e909032c0fd61c94c@ec2-107-21-67-46.compute-1.amazonaws.com:5432/dbblj85nc3srbf',
     migrations: {
       directory: './db/migrations'
     },
@@ -28,15 +28,6 @@ module.exports = {
       rejectUnauthorized: false, 
     },
     useNullAsDefault: true
-  },
-pool: {
-  min: 2,
-  max: 10,
-},
-migrations: {
-  tableName: 'knex_migrations',
-}
+  }
 };
 
-
-  
