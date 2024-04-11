@@ -20,8 +20,8 @@ node server.js
 
 | **VERB** | **URL** | **REQUEST BODY** | **SAMPLE RESPONSE** |
 | -------- | ------- | ---------------- | ------------------- |
-| GET | /roommates | None | `[ { id: <Number>, name: <String>, isSmoker: <Boolean>, hasPet: <Boolean>, important: <Text>, age: <Number>, maxBudget: <Number>, city: <String>, bio: <Text>, image: <String>}, ... ] }` |
-| POST | /roommates/:id | None | `{ id: <Number>, name: <String>, isSmoker: <Boolean>, hasPet: <Boolean>, important: <Text>, age: <Number>, maxBudget: <Number>, city: <String>, bio: <Text>, image: <String>}` |
+| GET all roommates| /roommates | None | `[ { id: <Number>, name: <String>, isSmoker: <Boolean>, hasPet: <Boolean>, important: <Text>, age: <Number>, maxBudget: <Number>, city: <String>, bio: <Text>, image: <String>}, ... ] }` |
+| GET single roommate | /roommates/:id | None | `{ id: <Number>, name: <String>, isSmoker: <Boolean>, hasPet: <Boolean>, important: <Text>, age: <Number>, maxBudget: <Number>, city: <String>, bio: <Text>, image: <String>}` |
 
 
 **Note:** The POST request needs a header of `Content-Type: application/json`.
