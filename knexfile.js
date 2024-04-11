@@ -21,19 +21,22 @@ module.exports = {
     },
     useNullAsDefault: true
   },
-  production: {
-    client: 'pg',
-    connection: process.env.DATABASE_URL,
-    migrations: {
-      directory: './db/migrations'
-    },
-    seeds: {
-      directory: './seeds'
-    },
-    useNullAsDefault: true
+
+production: {
+  client: 'pg',
+  connection: process.env.DATABASE_URL,
+  migrations: {
+    directory: './db/migrations'
   },
-  ssl: { rejectUnauthorized: false }, 
+  seeds: {
+    directory: './seeds'
+  },
+  ssl: {
+    rejectUnauthorized: false, 
+  },
   useNullAsDefault: true
+}
+
 };
 
 
