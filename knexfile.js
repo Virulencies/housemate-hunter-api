@@ -3,7 +3,7 @@
 require('dotenv').config()
 
 const pg = require('pg')
-pg.defaults.ssl = true
+
 
 
 /**
@@ -31,9 +31,7 @@ production: {
   seeds: {
     directory: './seeds'
   },
-  ssl: {
-    rejectUnauthorized: false, 
-  },
+
   useNullAsDefault: true
 }
 
