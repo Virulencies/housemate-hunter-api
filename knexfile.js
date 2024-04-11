@@ -11,7 +11,7 @@ pg.defaults.ssl = true
  */
 module.exports = {
   development: {
-    client: 'pg',
+    client: 'pq',
     connection: 'postgres://localhost/roommates',
     migrations: {
       directory: './db/migrations'
