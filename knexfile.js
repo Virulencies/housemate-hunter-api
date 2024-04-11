@@ -31,5 +31,9 @@ module.exports = {
       directory: './seeds'
     },
     useNullAsDefault: true
-  }
+  },
+  ssl: { rejectUnauthorized: false }, 
+  useNullAsDefault: true
 };
+
+
