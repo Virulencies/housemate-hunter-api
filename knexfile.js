@@ -31,16 +31,18 @@
 //   }
 // };
 
-const knex = require('knex');
 const { Pool } = require('pg');
+const knex = require('knex');
 
-module.exports = {
+// Knex.js configuration object
+const knexConfig = {
   development: {
     client: 'pg',
     connection: process.env.DATABASE_URL,
   },
 };
 
+// PostgreSQL pool setup
 const pgPool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -48,6 +50,7 @@ const pgPool = new Pool({
   }
 });
 
+// Knex.js initialization with connection pooling
 const db = knex({
   client: 'pg',
   connection: {
@@ -56,6 +59,6 @@ const db = knex({
   },
 });
 
+// Export both Knex.js configuration object and db object
+module.exports = { knexConfig, db };
 
-
-module.exports = db;
