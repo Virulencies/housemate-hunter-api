@@ -1,17 +1,4 @@
 // Update with your config settings.
-require('dotenv').config()
-const { Pool } = require('pg');
-require('dotenv').config();
-
-const pool = new Pool({
-  user: process.env.DB_USER,
-  database:  process.env.DB_NAME,
-  password: process.env.DB_PASS, 
-  port: process.env.DB_PORT, //5432
-  host: process.env.DB_HOST, //localhost
-});
-
-module.exports = { pool };
 
 /**
  * @type { import("knex").Knex.Config }
@@ -45,3 +32,4 @@ module.exports = {
 };
 
 
+  
