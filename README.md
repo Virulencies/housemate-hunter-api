@@ -1,4 +1,4 @@
-# Life List API
+# Housemate Hunter API
 
 This API can keep track of all the people looking for roommates in San Francisco and Denver. This repo is meant to be paired with the [Housemate Hunter](https://github.com/pareesakd1118/housemate-hunter) frontend.
 
