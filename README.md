@@ -4,7 +4,7 @@ This API can keep track of all the people looking for roommates in San Francisco
 
 ## Set Up Instructions
 
-Clone down the repo and change into the repo's directory.
+Clone down the repo and cd into the repo's directory.
 
 ```bash
 # Install library dependencies, run:
