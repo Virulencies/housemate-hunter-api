@@ -1,5 +1,10 @@
 
 // Update with your config settings.
+require('dotenv').config()
+
+const pg = require('pg')
+pg.defaults.ssl = true
+
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
@@ -17,7 +22,7 @@ module.exports = {
     useNullAsDefault: true
   },
   production: {
-    client: 'postgresql',
+    client: 'pq',
     connection: process.env.DATABASE_URL,
     migrations: {
       directory: './db/migrations'
