@@ -37,9 +37,7 @@ app.get('/api/v1/roommates/:id', async (request, response) => {
     }
 });
 
-app.listen(app.get('port'), () => {
-    console.log(`App is running on http://localhost:${app.get('port')}.`);
-  });
+app.listen(process.env.PORT || 3001);
   
   module.exports = app;
 
