@@ -36,6 +36,9 @@
 /**
  * @type { import("knex").Knex.Config }
  */
+
+var pg = require('pg').native;
+pg.defaults.ssl = true;
 module.exports = {
   development: {
     client: 'pg',
