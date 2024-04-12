@@ -8,7 +8,19 @@ const cors = require('cors');
 app.set('port', process.env.PORT || 3001)
 
 // app.use(cors({ origin: 'https://housemate-hunter.vercel.app' }));
-app.use(cors({ origin: 'http://localhost:3001' }));
+// app.use(cors({ origin: 'http://localhost:3002' }));
+
+const corsOptions = {
+    origin: function (origin, callback) {
+      if (!origin || /^http:\/\/localhost/.test(origin)) {
+        callback(null, true); 
+      } else {
+        callback(new Error('Not allowed by CORS')); 
+      }
+    },
+  };
+  
+  app.use(cors(corsOptions));
 
 app.get('/api/v1/roommates', async (request, response) => {
     try {
