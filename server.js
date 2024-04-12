@@ -7,7 +7,8 @@ const cors = require('cors');
 
 app.set('port', process.env.PORT || 3001)
 
-app.use(cors({origin: 'https://housemate-hunter.vercel.app/'}));
+// app.use(cors({ origin: 'https://housemate-hunter.vercel.app' }));
+app.use(cors({ origin: 'http://localhost:3001' }));
 
 app.get('/api/v1/roommates', async (request, response) => {
     try {
@@ -38,3 +39,5 @@ app.get('/api/v1/roommates/:id', async (request, response) => {
 app.listen(app.get('port'), () => {
     console.log(`App is running on http://localhost:${app.get('port')}.`);
   });
+
+
