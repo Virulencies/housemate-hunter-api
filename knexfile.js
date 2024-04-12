@@ -7,6 +7,11 @@ module.exports = {
   development: {
     client: 'pg',
     connection: 'postgres://localhost/roommates',
+    // process.env.DATABASE_URL || {
+    //   user: 'me',
+    //   database: 'my_app',
+    // },
+    
     migrations: {
       directory: './db/migrations'
     },
@@ -17,7 +22,10 @@ module.exports = {
   },
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: process.env.DATABASE_URL || {
+      user: 'erinkelley',
+      database: 'roommates'
+    },
     migrations: {
       directory: './db/migrations'
     },
