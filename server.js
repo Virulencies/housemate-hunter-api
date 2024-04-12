@@ -4,8 +4,11 @@ const database = require('knex')(configuration);
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const environment = process.env.NODE_ENV || 'development';
+const configuration = require('./knexfile')[environment];
+const database = require('knex')(configuration);
 
-app.use(cors()); // CORS for ALL origins, not just specific ones
+app.use(cors()); //CORS CORS CORS
 
 app.set('port', process.env.PORT || 3001);
 
@@ -38,3 +41,5 @@ app.get('/api/v1/roommates/:id', async (request, response) => {
 app.listen(app.get('port'), () => {
     console.log(`App is running on http://localhost:${app.get('port')}.`);
 });
+
+//
