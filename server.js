@@ -14,15 +14,14 @@ app.get('/api/v1/roommates', async (request, response) => {
         const roommates = await database('roommate').select();
         response.status(200).json(roommates);
     } catch(error) {
+        console.error(error); // Logging
         response.status(500).json({error});
     }
 });
 
 app.get('/api/v1/roommates/:id', async (request, response) => {
-
     try {
         const roommates = await database('roommate').where('id', request.params.id).select();
-        
         if(roommates.length){
             response.status(200).json(roommates);
         } else {
@@ -31,11 +30,13 @@ app.get('/api/v1/roommates/:id', async (request, response) => {
             });
         }
     } catch (error) {
+        console.error(error); // Log the error
         response.status(500).json({error});
     }
 });
 
 app.listen(app.get('port'), () => {
     console.log(`App is running on http://localhost:${app.get('port')}.`);
-  });
+});
+
 
