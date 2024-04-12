@@ -12,7 +12,7 @@ app.set('port', process.env.PORT || 3001)
 
 const corsOptions = {
     origin: function (origin, callback) {
-      if (!origin || /^http:\/\/localhost/.test(origin)) {
+      if (!origin || /^http:\/\/localhost/.test(origin) || "https://housemate-hunter.vercel.app/") {
         callback(null, true); 
       } else {
         callback(new Error('Not allowed by CORS')); 
