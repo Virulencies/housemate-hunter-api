@@ -5,9 +5,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3001)
 
-app.use(cors({origin: 'http://localhost:3000'}));
+app.use(cors());
 
 app.get('/api/v1/roommates', async (request, response) => {
     try {
@@ -17,8 +17,6 @@ app.get('/api/v1/roommates', async (request, response) => {
         response.status(500).json({error});
     }
 });
-
-
 
 app.get('/api/v1/roommates/:id', async (request, response) => {
 
@@ -37,7 +35,7 @@ app.get('/api/v1/roommates/:id', async (request, response) => {
     }
 });
 
-app.listen(process.env.PORT || 3001);
-  
-  module.exports = app;
+app.listen(app.get('port'), () => {
+    console.log(`App is running on http://localhost:${app.get('port')}.`);
+  });
 
