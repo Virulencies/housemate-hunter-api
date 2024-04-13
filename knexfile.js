@@ -1,50 +1,34 @@
-// Update with your config settings.
+// Load environment variables from .env file if present
+require('dotenv').config();
 
 /**
- * @type { import("knex").Knex.Config }
+ * @type { Object.<string, import("knex").Knex.Config> }
  */
-module.exports = {
-  development: {
-    client: 'pg',
-    connection: 'postgres://localhost/roommates',
-    // process.env.DATABASE_URL || {
-    //   user: 'me',
-    //   database: 'my_app',
-    // },
-    
-    migrations: {
-      directory: './db/migrations'
+
+  module.exports = {
+    development: {
+      client: 'pg',
+      connection: 'postgres://localhost/roommates', 
+      migrations: {
+        directory: './db/migrations'
+      },
+      seeds: {
+        directory: './seeds'
+      },
+      useNullAsDefault: true
+
     },
-    seeds: {
-      directory: './seeds'
-    },
-    useNullAsDefault: true
-  },
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL || {
-      user: 'erinkelley',
-      database: 'roommates'
-    },
+    connection: process.env.DATABASE_URL, // Use the DATABASE_URL environment variable in production
+
     migrations: {
       directory: './db/migrations'
     },
     seeds: {
       directory: './seeds'
     },
-    ssl: {
-      rejectUnauthorized: false, 
-    },
     useNullAsDefault: true
-  },
-pool: {
-  min: 2,
-  max: 10,
-},
-migrations: {
-  tableName: 'knex_migrations',
-}
+  }
 };
-
-
-  
+//
