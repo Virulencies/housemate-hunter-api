@@ -8,7 +8,8 @@
       "pg": "^8.11.5"
     },
     "scripts": {
-      "start": "node server.js"
+      "start": "node server.js",
+      "postinstall": "knex migrate:latest && knex seed:run"
     },
     "name": "housemate-hunter-api",
     "description": ".",
