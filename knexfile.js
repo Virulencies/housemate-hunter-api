@@ -19,7 +19,7 @@ require('dotenv').config();
     },
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL, // Use the DATABASE_URL environment variable in production
+    connection: process.env.DATABASE_URL + `?ssl=true`,
     migrations: {
       directory: './db/migrations'
     },
